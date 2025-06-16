@@ -1,4 +1,5 @@
-
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 import { DottedSeparator } from "@/components/dotted-separator";
 import { Button } from "@/components/ui/button";
@@ -42,7 +43,7 @@ export const SignInCard = () => {
                         max={255}
                     />
                     <Button disabled={false} size="lg" className="w-full">
-                        Login 
+                        Login
                     </Button>
                 </form>
             </CardContent>
@@ -50,20 +51,22 @@ export const SignInCard = () => {
                 <DottedSeparator />
             </div>
             <CardContent className="p-7 flex flex-col gap-y-4">
-            <Button 
-            disabled={false}
-            variant="secondary"
-            size="lg"
-            className="w-full">
-            Login with Google
-            </Button>
-            <Button 
-            disabled={false}
-            variant="secondary"
-            size="lg"
-            className="w-full">
-            Login with @Mail.ru
-            </Button>
+                <Button
+                    disabled={false}
+                    variant="secondary"
+                    size="lg"
+                    className="w-full">
+                    <FcGoogle className="mr-2 size-5" />
+                    Login with Google
+                </Button>
+                <Button
+                    disabled={false}
+                    variant="secondary"
+                    size="lg"
+                    className="w-full">
+                    <FaGithub className="mr-2 size-5" />
+                    Login with Github
+                </Button>
             </CardContent>
         </Card>
     );
