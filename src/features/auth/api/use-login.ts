@@ -3,8 +3,8 @@ import { InferRequestType, InferResponseType } from "hono";
 
 import { client } from "@/lib/rpc";
 
-type ResponseType = InferResponseType<typeof client.api.auth.login["$post"]>
-type RequestType = { email: string; password: string; }
+type ResponseType = InferResponseType<typeof client.api.auth.login["$post"]>;
+type RequestType = InferRequestType<typeof client.api.auth.login["$post"]>;
 
 export const useLogin = () => {
     const mutation = useMutation<
@@ -12,8 +12,8 @@ export const useLogin = () => {
     Error,
     RequestType
     >({
-        mutationFn: async (values) => {
-            const response = await client.api.auth.login["$post"]({ json: values });
+        mutationFn: async ({ json }) => {
+            const response = await client.api.auth.login["$post"]({ json });
             return await response.json();
         },
     });
