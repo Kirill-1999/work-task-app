@@ -1,4 +1,3 @@
-import { z } from "zod";
 import { Hono } from "hono";
 import { zValidator } from "@hono/zod-validator";
 
@@ -7,7 +6,6 @@ import { createAdminClient } from "@/lib/appwrite";
 import { ID } from "node-appwrite";
 import { setCookie } from "hono/cookie";
 import { AUTH_COOKIE } from "../constants";
-import { success } from "zod/v4";
 
 const app = new Hono()
     .post(
